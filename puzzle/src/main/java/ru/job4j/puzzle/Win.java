@@ -4,15 +4,14 @@ public class Win {
     public static boolean check(int[][] board) {
         boolean rsl = true;
         for (int row = 0; row < board.length; row++) {
-            for (int cell = 0; cell < board.length; cell++) {
-                if (board[row][cell] == 1) {
-                    rsl = (Win.checkHorizontal(board, row) || Win.checkVertical(board, cell));
+            if (board[row][row] == 1) {
+                    rsl = (Win.checkHorizontal(board, row) || Win.checkVertical(board,row));
                     break;
                 }
             }
-        }
         return rsl;
-    }
+        }
+
 
     public static boolean checkHorizontal(int[][] board, int row) {
         boolean rsl = true;
